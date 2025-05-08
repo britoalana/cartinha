@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Com amor, Nana</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext x='3' y='12' font-size='10'%3E❤️%3C/text%3E%3C/svg%3E">
+
+  <style>
+    body {
+  font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      background: #ffe6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .carta-container {
+      perspective: 1000px;
+    }
+
+    .carta {
+      width: 320px;
+      height: 220px;
+      background: #fff;
+      border: 2px solid #ff99cc;
+      border-radius: 10px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+      cursor: pointer;
+    }
+
+    .carta.aberta {
+      transform: rotateY(180deg);
+    }
+
+    .frente, .verso {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+
+    .frente {
+      background: linear-gradient(to top left, #fff, #ffe6f0);
+      font-size: 22px;
+      color: #cc3366;
+      font-weight: bold;
+    }
+
+    .verso {
+      background: #fff;
+      transform: rotateY(180deg);
+      font-size: 16px;
+      color: #cc3366;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carta-container">
+    <div class="carta" id="carta">
+      <div class="frente">
+        💌 Clique para abrir
+      </div>
+      <div class="verso">
+        💖 Te escrevi algo...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const carta = document.getElementById("carta");
+
+    function abrirCarta() {
+      carta.classList.add("aberta");
+      setTimeout(() => {
+        window.location.href = "carta.html";
+      }, 1000);
+    }
+
+    carta.addEventListener("click", abrirCarta);
+    carta.addEventListener("touchstart", abrirCarta);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext x='3' y='12' font-size='10'%3E❤️%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Eu te amo, meu amorzinho!!!</h1>
+
+    <div class="audio-player">
+      <!-- Capa do Álbum à Esquerda -->
+      <div class="album-cover">
+        <img src="1988-petala.jpg" alt="Capa do álbum" />
+      </div>
+    
+      <!-- Player com Barra de Progresso e Botão Play -->
+      <div class="player-controls">
+        <!-- Barra de Progresso -->
+        <div class="progress-bar">
+          <input type="range" class="progress" value="0" min="0" max="100" />
+        </div>
+    
+        <!-- Exibição de Tempo -->
+        <div class="time-display">
+          <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+        </div>
+    
+        <!-- Botão de Play/Pause -->
+        <div class="play-button" onclick="togglePlayPause()">
+          <i class="fas fa-play play-icon"></i> <!-- Ícone de Play -->
+        </div>
+      </div>
+    
+      <!-- Reprodutor de Áudio -->
+      <audio id="audio" preload="auto" ontimeupdate="updateProgress()" onloadeddata="setTotalTime()">
+        <source src="petaladjavan.mp3" type="audio/mpeg" />
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+    </div>
+    
+    
+    <div class="card">
+      <div class="card-inner">
+        <!-- Frente com carrossel -->
+        <div class="card-front">
+          <img id="carouselImage" src="foto1.jpg" alt="Foto" />
+        </div>
+        <!-- Verso com mensagem -->
+        <div class="card-back">
+          💖 Todos os momentos com você são mágicos.
+        </div>
+      </div>
+    </div>
+
+    <div id="contador"></div>
+
+    <div class="carta">
+      Lu, te amo muitooo, como nunca amei ninguém antes. Cada segundo com você é incrível, você me faz muito feliz e me sentir amada. Espero que eu te faça sentir o mesmo. 
+
+      Você é um companheiro maravilhoso, sempre disposto a me ouvir e ajudar. Sei que posso contar com você, independente de tudo. 
+      
+      Tudo que a gente já passou até hoje acredito que está nos planos de Deus, pois a forma como nos encontramos e tudo o que aconteceu me faz acreditar que foi tudo no momento certo e com um propósito. 
+      
+      Quero você para o resto da minha vida. Com você, consigo ser eu mesma, e meu dia ganha mais cores por sua causa. Quero construir minha família com você e ter um futuro lindo contigo, te amo muito muito.
+      
+      Desculpa às vezes não demonstrar tanto, porque nunca tive esse costume. Mas com você é diferente, estou sempre me esforçando para melhorar nisso, e espero que seja perceptível o quanto eu te amo e quero estar com você.
+    </div>
+   
+    <script src="index.js"></script>
+</body>
+</html>

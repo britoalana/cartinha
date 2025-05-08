@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #fff0f5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  position: relative;
+}
+
+.card:hover .card-inner,
+.card:active .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-back {
+  background-color: #ffccdd;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+.carta {
+  max-width: 800px;
+  width: 90%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background: #fff8fa;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  white-space: pre-line;
+  text-align: left;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .carta {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+
+  .card-inner {
+    height: 300px;
+  }
+
+  .card-front img,
+  .card-front,
+  .card-back {
+    height: 100%;
+  }
+}
+
+/* Corações caindo (se quiser manter) */
+.heart {
+  position: absolute;
+  top: -50px;
+  color: hotpink;
+  font-size: 20px;
+  animation-name: fall;
+  animation-timing-function: linear;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+/* Estilo do player de música */
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ajuste para alinhar os itens à esquerda */
+  width: 100%;
+  max-width: 400px;  /* Tamanho reduzido do player */
+  background-color: #ffe6f2;
+  border-radius: 10px;
+  padding: 15px;  /* Redução de padding para um player mais compacto */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover img {
+  width: 100px;  /* Aumenta o tamanho da imagem */
+  height: 100px; /* Aumenta o tamanho da imagem */
+  border-radius: 50%; /* Faz a imagem ficar redonda */
+  object-fit: cover;
+  margin-right: 15px; /* Espaço entre a capa do álbum e o restante do player */
+}
+
+
+/* Player com controles */
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Barra de progresso */
+.progress-bar {
+  width: 100%;
+  margin-bottom: 10px; /* Distância entre a barra de progresso e o botão */
+}
+
+input[type="range"].progress {
+  width: 100%;
+  background-color: #ff99cc; /* Cor da barra de progresso rosa */
+  border-radius: 5px;
+  height: 8px;
+  -webkit-appearance: none;
+}
+
+input[type="range"].progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #ff66b3; /* Cor rosa do botão */
+  border-radius: 50%;
+}
+
+/* Exibição de tempo */
+.time-display {
+  font-size: 0.9rem;
+  color: #ff66b3;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Botão de Play/Pause */
+.play-button {
+  background-color: #fff;
+  border: 2px solid #ff66b3;
+  border-radius: 50%;
+  padding: 8px; /* Reduzido para ficar menor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40px; /* Botão de play reduzido */
+  height: 40px; /* Botão de play reduzido */
+  margin-top: 10px; /* Distância entre o botão e a barra de progresso */
+}
+
+.play-button .play-icon {
+  font-size: 22px;
+  color: #ff66b3; /* Cor rosa do ícone */
+  transition: color 0.3s;
+}
+
+/* Efeito de hover no botão de play */
+.play-button:hover .play-icon {
+  color: #fff; /* Muda a cor do ícone para branco */
+}
+
+.play-button:hover {
+  background-color: #ff66b3;
+  transform: scale(1.1);
+}
+
+/* Ajustes no player */
+audio {
+  display: none;
+}
