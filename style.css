@@ -160,6 +160,15 @@ h1 {
   width: 100%;
 }
 
+.song-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #ff66b3;
+}
+
+
 /* Barra de progresso */
 .progress-bar {
   width: 100%;
