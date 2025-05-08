@@ -14,10 +14,7 @@ function createHeart() {
 }
 
 // Cria corações constantemente
-setInterval(createHeart, 200);
-
-  // Cria corações continuamente
-  setInterval(createHeart, 200);
+setInterval(createHeart, 300);
 
   const imagens = [
     'foto1.jpeg',
